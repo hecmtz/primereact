@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 export class DropdownItem extends Component {
 
@@ -29,7 +29,7 @@ export class DropdownItem extends Component {
     }
 
     onClick(event) {
-        if(this.props.onClick) {
+        if (this.props.onClick) {
             this.props.onClick({
                 originalEvent: event,
                 option: this.props.option
@@ -44,12 +44,27 @@ export class DropdownItem extends Component {
             'p-dropdown-item-empty': (!this.props.label || this.props.label.length === 0)
         });
         let content = this.props.template ? this.props.template(this.props.option) : this.props.label;
-
-        return (
-            <li className={className} onClick={this.onClick} aria-label={this.props.label} key={this.props.label} role="option" aria-selected={this.props.selected}>
-                {content}
-            </li>
+        console.log('dropdown Hec');
+        return ( <
+            li className = {
+                className
+            }
+            onClick = {
+                this.onClick
+            }
+            aria - label = {
+                this.props.label
+            }
+            key = {
+                this.props.label
+            }
+            role = "option"
+            aria - selected = {
+                this.props.selected
+            } > {
+                content
+            } <
+            /li>
         );
     }
 }
-
